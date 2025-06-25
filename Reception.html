@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Reception</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hospital Reception Desk</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('register')">Patient Registration</button>
+    <button onclick="showSection('appointment')">Book Appointment</button>
+  </nav>
+
+  <main>
+    <section id="register" class="content-section">
+      <h2>Register Patient</h2>
+      <form id="registrationForm">
+        <input type="text" placeholder="Full Name" required />
+        <input type="number" placeholder="Age" required />
+        <input type="text" placeholder="Gender" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="text" placeholder="Address" required />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="appointment" class="content-section" style="display:none;">
+      <h2>Book Appointment</h2>
+      <form id="appointmentForm">
+        <input type="text" placeholder="Patient Name" required />
+        <input type="date" required />
+        <input type="time" required />
+        <select required>
+          <option value="">Select Doctor</option>
+          <option>Dr. John</option>
+          <option>Dr. Mary</option>
+          <option>Dr. Patel</option>
+        </select>
+        <button type="submit">Book</button>
+      </form>
+    </section>
+  </main>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #2196f3;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+nav button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: #0b7dda;
+}
+
+main {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form select {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button[type="submit"] {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: darkgreen;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+</style>
+<script>
+    function showSection(sectionId) {
+  const sections = document.querySelectorAll('.content-section');
+  sections.forEach(section => {
+    section.style.display = 'none';
+  });
+
+  document.getElementById(sectionId).style.display = 'block';
+}
+
+// Optional: Add form handling logic
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Patient registered successfully!');
+  this.reset();
+});
+
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Appointment booked successfully!');
+  this.reset();
+});
+</script>
+  <footer>
+    <p>&copy; 2025 Medium Hospital Reception Piont</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

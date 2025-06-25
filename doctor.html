@@ -1,0 +1,313 @@
+<html>
+<head>
+	<title> Medium Hospital </title>
+	
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+	
+</head>
+<style>
+	body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: rgb(3, 252, 239);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0f7ef5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e0f7fa;
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 4px solid #f9fcff;
+}
+</style>
+<body>
+<button onclick="Appointment()">Appointment</button>
+<script>
+	function Appointment(){
+		alert("Appointment!");}
+	document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const doctor = document.getElementById('doctor').value;
+
+  const appointmentList = document.getElementById('appointmentList');
+  const li = document.createElement('li');
+  li.textContent = `${date} at ${time} - ${name} (${email}) with ${doctor}`;
+  appointmentList.appendChild(li);
+
+  // Reset the form
+  this.reset();
+});
+</script>
+	<div class="top">
+		<div>
+		 Contact Us +254 117332113 | mediumh@hospital.com 
+		</div>
+	</div>
+	
+	<div class="logo">
+		<div>
+			<table>
+				<tr>
+					<td width="600px" style="font-size:50px;font-family:forte;"> <font color="#428bca"> Medium  </font><font color="#000"> Hospital</font> </td>
+					<td> <br> <br>
+						<font size="4px"> 
+							<a href="index.html">HOME</a> 
+							<a href="about.html">ABOUT US</a>  
+							<a href="service.html">SERVICE</a>
+							<a href="doctor.html">DOCTORS</a> 
+							<a href="contact.html">CONTACT US</a>
+						</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="bottom">
+		<div>
+			<table border="0">
+				<tr>
+					<td width="600px">
+			<font color="#000">
+			</font> <br> <br>
+We are a leading hospital in the city, providing quality healthcare services to our patients for over 10 years. Our team of experienced doctors and medical professionals are dedicated to providing the best care to our patients.
+We offer a wide range of medical services, including general medicine, cardiology, neurology, orthopedics, pediatrics, and more. Our hospital is equipped with state-of-the-art medical equipment and facilities to ensure the best possible care for our patients.
+					<font color="#3e8e41" size="5px">
+	<div class="container">
+		<h1>Doctor Appointment Booking</h1>
+	<form id="appointmentForm">
+		 <label for="name">Patient Name:</label>
+		 <input type="text" id="name" required>
+						
+		 <label for="email">Email:</label>
+		<input type="email" id="email" required>
+						
+	  <label for="date">Appointment Date:</label>
+	  <input type="date" id="date" required>
+						
+	 <label for="time">Time:</label>
+	<input type="time" id="time" required>
+	<label for="doctor">Doctor:</label>
+  <select id="doctor" required>
+	<option value="">Select a Doctor</option>
+	<option>Dr.Faith</option>
+	<option>Dr. Adams</option>
+	<option>Dr. Jackson</option>
+ </select>
+ <button type="submit">Book Appointment</button>
+	</form>
+<img src="img/appointment1.jpg" alt=width="500" height="300">
+ <h2>Scheduled Appointments</h2>
+<ul id="appointmentList"></ul>
+	</div>	
+	<img src="img/01 (2).JPG" alt=width="500" height="300"
+	<header>
+		<h1>Morning Duties and Shift Times</h1>
+	  </header>
+	  <main>
+		<section>
+		  <h2>Duties</h2>
+		  <ul>
+			<li>Administer medications and treatments as prescribed by physicians</li>
+			<li>Monitor patients and report any changes in their condition</li>
+			<li>Assist with daily living activities such as bathing and dressing</li>
+			<li>Document patient care and progress in medical records</li>
+		  </ul>
+		</section>
+		<section>
+		  <h2>Shift Times</h2>
+		  <table>
+			<thead>
+			  <tr>
+				<th>Nurse ID</th>
+				<th>Nurse Name</th>
+				<th>Shift</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Ward ID</th>
+				<th>Contact Number</th>
+  
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>1</td>
+				<td>Samiya</td>
+				<td>Morning</td>
+				<td>7:00 AM</td>
+				<td>3:00 PM</td>
+				<td>1</td>
+				<td>0733530156</td>
+			  </tr>
+			  <tr>
+				<td>2</td>
+				<td>Fatuma</td>
+				<td>Morning</td>
+				<td>3:00 AM</td>
+				<td>11:00 PM</td>
+				<td>2</td>
+				<td>0732530156</td>
+			  </tr>
+			  <tr>
+				<td>3</td>
+				<td>Areba</td>
+				<td>Morning</td>
+				<td>11:00 AM</td>
+				<td>7:00 PM</td>
+				<td>3</td>
+				<td>0783530143</td>
+			  </tr>
+			  <tr>
+				<td>4</td>
+				<td>Amina</td>
+				<td>Morning</td>
+				<td>8:00 AM</td>
+				<td>6:00 PM</td>
+				<td>4</td>
+				<td>0783530156</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</section>
+	  </main>
+	</font> <br> <br>
+<br>
+<br>
+<br>
+ </td>	
+ 
+<td style="padding-left:20px;"> </td>
+</tr>
+</table>
+</div>
+<head>
+	<img src="img/01.jpg" alt=width="500" height="300">
+    <title>Night Duties and Shift Times</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NurseData.css">
+  </head>
+  <body>
+    <header>
+      <h1>Night Duties and Shift Times</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Duties</h2>
+        <ul>
+          <li>Administer medications and treatments as prescribed by physicians</li>
+          <li>Monitor patients and report any changes in their condition</li>
+          <li>Assist with daily living activities such as bathing and dressing</li>
+          <li>Document patient care and progress in medical records</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Shift Times</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nurse ID</th>
+              <th>Nurse Name</th>
+              <th>Shift</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Ward ID</th>
+              <th>Contact Number</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Saima</td>
+              <td>Night</td>
+              <td>7:00 PM</td>
+              <td>3:00 AM</td>
+              <td>5</td>
+              <td>0115262589</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Dunkan</td>
+              <td>Night</td>
+              <td>3:00 PM</td>
+              <td>11:00 AM</td>
+              <td>6</td>
+              <td>0712762591</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Heren</td>
+              <td>Night</td>
+              <td>11:00 PM</td>
+              <td>7:00 AM</td>
+              <td>7</td>
+              <td>0734728575</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Shaoko</td>
+              <td>Night</td>
+              <td>8:00 PM</td>
+              <td>6:00 AM</td>
+              <td>8</td>
+              <td>0717840543</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</div>
+<div class="nav_down">
+		<div>
+		 &copy; Medium Hospital, site designed & developed by DTechnology
+		</div>
+	</div>
+	
